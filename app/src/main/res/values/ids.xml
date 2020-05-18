@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nameDayName" type="id" />
+    <item name="nameDayDate" type="id" />
+    <item name="nav_about" type="id" />
+    <item name="nav_main" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="placeholderTextView" type="id" />
+</resources>
