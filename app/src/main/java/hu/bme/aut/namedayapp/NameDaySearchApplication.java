@@ -6,8 +6,8 @@ import hu.bme.aut.namedayapp.interactors.InteractorModule;
 import hu.bme.aut.namedayapp.ui.UIModule;
 
 public class NameDaySearchApplication extends Application {
-
-    public static NameDaySearchApplicationComponent injector;
+    private static NameDaySearchApplication sInstance;
+    public NameDaySearchApplicationComponent injector;
 
     @Override
     public void onCreate(){
@@ -19,5 +19,23 @@ public class NameDaySearchApplication extends Application {
                 ).build();
 
         System.out.println("HERE HERE HERE : " + injector);
+    }
+
+    public NameDaySearchApplication() {
+        sInstance = this;
+    }
+
+    public static NameDaySearchApplicationComponent getInstance() {
+        return sInstance.getAppComponent();
+    }
+
+    private NameDaySearchApplicationComponent getAppComponent() {
+        if (injector == null) {
+            injector = DaggerNameDaySearchApplicationComponent.builder().
+                    uIModule(
+                            new UIModule(this)
+                    ).build();
+        }
+        return injector;
     }
 }

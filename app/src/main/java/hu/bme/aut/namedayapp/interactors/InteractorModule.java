@@ -1,21 +1,24 @@
 package hu.bme.aut.namedayapp.interactors;
 
+import javax.inject.Inject;
+
 import dagger.Module;
 import dagger.Provides;
 
 @Module
 public class InteractorModule {
 
-    public NameDaySearchByNameInteractor provideNameDaySearchByNameInteractor(){
+    @Inject
+    NameDaySearchByNameInteractor provideNameDaySearchByNameInteractor(){
         return new NameDaySearchByNameInteractor();
     }
 
     @Provides
-    public NameDaySearchByDateInteractor provideNameDaySearchByDateInteractor(){
+    NameDaySearchByDateInteractor provideNameDaySearchByDateInteractor(){
         return new NameDaySearchByDateInteractor();
     }
     @Provides
-    public ListPlaceHolderInteractor provideWelcomeTextInteractor(){
+    ListPlaceHolderInteractor provideWelcomeTextInteractor(){
         return new ListPlaceHolderInteractor();
     }
 
