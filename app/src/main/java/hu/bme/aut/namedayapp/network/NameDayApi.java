@@ -1,5 +1,6 @@
 package hu.bme.aut.namedayapp.network;
 
+import hu.bme.aut.namedayapp.model.Namedays;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -15,7 +16,7 @@ public interface NameDayApi {
    */
   
   @GET("getdate")
-  Call<Void> getdateGet(
+  Call<Namedays> getdateGet(
     @Query("name") String name, @Query("country") String country
   );
 
@@ -30,7 +31,7 @@ public interface NameDayApi {
    */
   
   @GET("namedays")
-  Call<Void> namedaysGet(
+  Call<Namedays> namedaysGet(
     @Query("country") String country, @Query("month") String month, @Query("day") String day
   );
 
@@ -43,7 +44,7 @@ public interface NameDayApi {
    */
   
   @GET("today")
-  Call<Void> todayGet(
+  Call<Namedays> todayGet(
     @Query("country") String country
   );
 
@@ -56,7 +57,7 @@ public interface NameDayApi {
    */
   
   @GET("tomorrow")
-  Call<Void> tomorrowGet(
+  Call<Namedays> tomorrowGet(
     @Query("country") String country
   );
 
@@ -68,7 +69,7 @@ public interface NameDayApi {
    */
   
   @GET("yesterday")
-  Call<Void> yesterdayGet();
+  Call<Namedays> yesterdayGet();
     
 
   

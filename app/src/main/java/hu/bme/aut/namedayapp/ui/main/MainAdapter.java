@@ -55,8 +55,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(final MainAdapter.ViewHolder viewHolder, final int position) {
-        viewHolder.nameTextView.setText(nameDays.get(position).getName());
-        viewHolder.dateTextView.setText(DateHelper.ConvertToMonthAndDayFormat(nameDays.get(position).getDate()));
+        viewHolder.nameTextView.setText(nameDays.get(position).getData().getNamedays().getHu());
+        viewHolder.dateTextView.setText(DateHelper.ConvertToMonthAndDayFormat(nameDays.get(position).getData().getDates()));
     }
 
     @Override

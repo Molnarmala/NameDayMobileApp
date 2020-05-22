@@ -1,53 +1,54 @@
 package hu.bme.aut.namedayapp.interactors;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
+import hu.bme.aut.namedayapp.model.Data;
+import hu.bme.aut.namedayapp.model.Dates;
 import hu.bme.aut.namedayapp.model.NameDay;
+import hu.bme.aut.namedayapp.model.Namedays;
 
 //TODO: Actual call needs to be implemented
 public class DefaultNameDaySearchInteractor {
 
     public DefaultNameDaySearchInteractor() {}
 
-    public List<NameDay> getNameDaysToday() {
-        List<NameDay> ret = new ArrayList<>();
-        Calendar date = Calendar.getInstance();
-        date.add(Calendar.MONTH, Calendar.MAY);
-        date.add(Calendar.DAY_OF_MONTH, 22);
-        NameDay julia = new NameDay();
-        julia.setDate(date);
-        julia.setName("Julia");
-        NameDay rita = new NameDay();
-        rita.setName("Rita");
-        rita.setDate(date);
-        ret.add(julia);
-        ret.add(rita);
+    public NameDay getNameDaysToday() {
+        NameDay ret = new NameDay();
+        Dates dates = new Dates();
+        dates.setDay(22);
+        dates.setMonth(5);
+        Data data = new Data();
+        data.setDates(dates);
+        Namedays namedays = new Namedays();
+        namedays.setHu("Julia,Rita");
+        data.setNamedays(namedays);
+        ret.setData(data);
         return ret;
     }
 
-    public List<NameDay> getNameDaysTomorrow() {
-        List<NameDay> ret = new ArrayList<>();
-        Calendar date = Calendar.getInstance();
-        date.add(Calendar.MONTH, Calendar.MAY);
-        date.add(Calendar.DAY_OF_MONTH, 23);
-        NameDay dezso = new NameDay();
-        dezso.setDate(date);
-        dezso.setName("Dezső");
-        ret.add(dezso);
+    public NameDay getNameDaysTomorrow() {
+        NameDay ret = new NameDay();
+        Dates dates = new Dates();
+        dates.setDay(23);
+        dates.setMonth(5);
+        Data data = new Data();
+        data.setDates(dates);
+        Namedays namedays = new Namedays();
+        namedays.setHu("Dezso");
+        data.setNamedays(namedays);
+        ret.setData(data);
         return ret;
     }
 
-    public List<NameDay> getNameDaysYesterday() {
-        List<NameDay> ret = new ArrayList<>();
-        Calendar date = Calendar.getInstance();
-        date.add(Calendar.MONTH, Calendar.MAY);
-        date.add(Calendar.DAY_OF_MONTH, 21);
-        NameDay konstantin = new NameDay();
-        konstantin.setDate(date);
-        konstantin.setName("Konstantin");
-        ret.add(konstantin);
+    public NameDay getNameDaysYesterday() {
+        NameDay ret = new NameDay();
+        Dates dates = new Dates();
+        dates.setDay(21);
+        dates.setMonth(5);
+        Data data = new Data();
+        data.setDates(dates);
+        Namedays namedays = new Namedays();
+        namedays.setHu("Konstantin");
+        data.setNamedays(namedays);
+        ret.setData(data);
         return ret;
     }
 }

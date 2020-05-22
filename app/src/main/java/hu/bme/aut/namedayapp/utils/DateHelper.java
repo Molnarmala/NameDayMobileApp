@@ -3,9 +3,11 @@ package hu.bme.aut.namedayapp.utils;
 import java.util.Calendar;
 import java.util.Date;
 
+import hu.bme.aut.namedayapp.model.Dates;
+
 public final class DateHelper {
-    public static final String ConvertToMonthAndDayFormat(Calendar calendar)
+    public static String ConvertToMonthAndDayFormat(Dates dates)
     {
-        return calendar.get(Calendar.MONTH)+ ". " + calendar.get(Calendar.DAY_OF_MONTH);
+        return dates.getMonth()+ ". " + dates.getDay();
     }
 }
